@@ -1,2 +1,2 @@
-# Cypress-EJ
-Cypress Automation for EJ Project
+# Cypress_QA
+ This is my first project

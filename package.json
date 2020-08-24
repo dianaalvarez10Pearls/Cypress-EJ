@@ -1,0 +1,37 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.1.0",
+    "cypress-cucumber-preprocessor": "^2.2.0",
+    "cypress-file-upload": "^4.0.6",
+    "cypress-plugin-retries": "^1.5.2",
+    "cypress-sql-server": "^1.0.0",
+    "cypress-wait-until": "^1.7.0",
+    "cypress-xpath": "^1.4.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "dependencies": {
+    "chokidar": "^3.3.1",
+    "convert-csv-to-json": "0.0.15",
+    "csvtojson": "^2.0.10",
+    "fs": "0.0.1-security",
+    "fs-extra": "^9.0.0",
+    "md5": "^2.2.1",
+    "neat-csv": "^5.2.0",
+    "papaparse": "^5.2.0",
+    "react": "^16.13.1",
+    "tedious": "^8.3.0",
+    "typescript": "^3.9.3"
+  },
+  "description": ""
+}
