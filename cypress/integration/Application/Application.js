@@ -8,7 +8,6 @@ const app = new status ()
 const ac = new Activist ()
 
    
-
 Given('Login into the Site', () => {
   
   ac.activistform()

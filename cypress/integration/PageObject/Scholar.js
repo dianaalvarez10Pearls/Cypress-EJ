@@ -1,6 +1,7 @@
 ///  <reference types="cypress"/>
 
 import Loginpage from  '../PageObject/Loginpage'
+import { getNameOfDeclaration } from 'typescript'
 
 const lp = new Loginpage ()
 
@@ -12,7 +13,6 @@ go_scholar ()
     lp.Visit()
     const btn =cy.get('[href="/apply"]')
     btn.click()
-
     const btn2= cy.get('[href="/apply-scholar"]')
     btn2.click()
 }
@@ -77,6 +77,8 @@ fillCity ()
     city.type('Miami')
     return this
 }
+
+
 
 fillzip (value)
 
@@ -207,11 +209,12 @@ comfortable ()
     section4 ()
 
     {
-            const selfi=cy.xpath("//section[@id='Demographic Information']//fieldset[@class='MuiFormControl-root styles__StyledFormControl-y6pzgx-0 eZDNad']//label[7]//span[1]//span[1]//input[1]")
+            const selfi=cy.xpath("/html[1]/body[1]/div[2]/main[1]/div[1]/div[2]/div[1]/section[4]/div[2]/div[1]/div[1]/div[2]/fieldset[1]/div[1]/label[1]/span[1]/span[1]/input[1]")
+            //const selfi=cy.xpath("//section[@id='Demographic Information']//fieldset[@class='MuiFormControl-root styles__StyledFormControl-y6pzgx-0 eZDNad']//label[7]//span[1]//span[1]//input[1]")
             selfi.check()
-            const primle=cy.xpath("//section[@id='Demographic Information']//div[4]//fieldset[1]//div[1]//label[1]//span[1]//span[1]//input[1]")
+            const primle=cy.xpath("/html[1]/body[1]/div[2]/main[1]/div[1]/div[2]/div[1]/section[4]/div[2]/div[1]/div[1]/div[4]/fieldset[1]/div[1]/label[1]/span[1]/span[1]/input[1]")
             primle.check()
-            const secondle=cy.xpath("//section[@id='Demographic Information']//div[6]//fieldset[1]//div[1]//label[2]//span[1]//span[1]//input[1]")
+            const secondle=cy.xpath("/html[1]/body[1]/div[2]/main[1]/div[1]/div[2]/div[1]/section[4]/div[2]/div[1]/div[1]/div[6]/fieldset[1]/div[1]/label[1]/span[1]/span[1]/input[1]")
             secondle.check()
             return this
 
@@ -269,13 +272,20 @@ comfortable ()
     const relation=cy.get('[id="113"]')
     relation.clear()
     relation.type('Son')
+    const relation1=cy.get('[id="114"]')
+    relation1.clear()
+    relation1.type('diana.alvarez@gmail.com')
     const cell=cy.get('[id="115"]')
     cell.clear()
     cell.type('3456787654')
-    const gender=cy.xpath("//div[@class='styles__Wrapper-nrkjin-0 injzyB']//div[@id='mui-component-select-0']")
-    gender.click()
-    gender.get('[data-value="Male"]')
-    gender.click()
+    const gender=cy.get(':nth-child(6) > .styles__Wrapper-nrkjin-0 > .MuiFormControl-root > .MuiInputBase-root > #mui-component-select-0')    
+    gender.click()    
+    gender.get('[data-value="Female"]')
+    gender.click()   
+    const genderschool=cy.xpath("(//div[@id='mui-component-select-0'])[4]")
+    genderschool.click()
+    genderschool.get('[data-value="Brandeis Elementary School"]')
+    genderschool.click()          
     const identify=cy.xpath("//section[@id='Child Information']//label[7]//span[1]//span[1]//input[1]")
     identify.check()
     const most=cy.get('[id="118"]')
@@ -284,14 +294,17 @@ comfortable ()
     const support=cy.get('[id="119"]')
     support.clear()
     support.type("Science")
+    const view=cy.get('#Documents > .styles__Wrapper-sc-1exyr8r-0 > .MuiBox-root > .styles__StyledGrid-sc-1exyr8r-2 > .MuiGrid-root')
+    view.click()
+    const memb=cy.get('.MuiGrid-root > .MuiFormGroup-root > .MuiFormControlLabel-root > .MuiButtonBase-root> .MuiIconButton-label')
+    memb.click()
+    const buttonok=cy.get('.blue > .MuiButtonBase-root')
+    buttonok.click()
     return this
     
-
-
-
-
-
     }
+
+    
 
 
 apply ()

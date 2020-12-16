@@ -34,7 +34,7 @@ Given('Open Scholar Form', () => {
     sc.accesstheinternet()
     sc.youaccessinternet()
     sc.comfortable()
-    sc.section4()
+    //sc.section4()
     sc.section5()
     sc.section6()
     sc.section7(Element.LastN)
