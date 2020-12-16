@@ -6,8 +6,7 @@ import Activist  from  '../PageObject/Activist'
 
 const ac = new Activist ()
 
-   
-
+  
 Given('Open Activist Form', () => {
 
   ac.activistform()
@@ -17,16 +16,12 @@ Given('Open Activist Form', () => {
    
 When('I Fill out the form', () =>{ 
 
-
   
   ac.contactinfo()
   ac.Fileupload()
   
-  
-  
-      
-       
-     
+        
+            
 
   
     When('I Click in subbmit button', () => { 

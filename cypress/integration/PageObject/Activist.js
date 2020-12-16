@@ -33,24 +33,20 @@ class activist {
         ln.type(`${data.last_Name}{enter}`);
         const adress = cy.xpath("//input[@id='12']");
         adress.type("Street 89th");
-        const State = cy.xpath(
-          "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]"
-        );
-        State.click();
-        State.get('[data-value="Florida"]');
-        State.click();
-        const city = cy.xpath("//input[@id='15']");
-        city.type("Miami");
+        const State = cy.xpath("//input[@id='15']")        
+        State.type("Florida") 
+        const staflori = cy.xpath("//body/div[@id='app']/main[@id='main-content']/div[1]/div[2]/div[1]/section[1]/div[2]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]")
+        staflori.click()
+        staflori.get('[data-value="Alabama"]');
+        staflori.click()
         const zip = cy.xpath("//input[@id='16']");
         zip.type("33654");
         const emaila = cy.xpath("//input[@id='17']");
         emaila.type(`${data.email}{enter}`);
         const phonea = cy.xpath("//input[@id='18']");
-        phonea.type(`${data.phone}{enter}`);
-        const preferred = cy.xpath(
-          "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/div[1]/div[12]/fieldset[1]/div[1]/label[1]/span[2]"
-        );
-        preferred.click();
+        phonea.type(`${data.phone}{enter}`);        
+
+        
         const guardiantitle = cy.xpath(
           "//div[@class='styles__Wrapper-nrkjin-0 jyPRJo']//div[@id='mui-component-select-0']"
         );
@@ -63,16 +59,18 @@ class activist {
         guardianlast.type(`${data.last_Name}{enter}`);
         const guardianadress = cy.xpath("//input[@id='27']");
         guardianadress.type("Street 89th");
-        const guardianstate = cy.xpath(
-          "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/section[2]/div[2]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]"
-        );
-        guardianstate.click();
-        guardianstate.get('[data-value="Florida"]');
-        guardianstate.click();
         const guardiancity = cy.xpath("//input[@id='29']");
         guardiancity.type("Miami");
         const guardianzip = cy.xpath("//input[@id='31']");
         guardianzip.type("33654");
+        const guardianstate = cy.xpath(
+          "//body/div[@id='app']/main[@id='main-content']/div[1]/div[2]/div[1]/section[2]/div[2]/div[1]/div[1]/div[7]"
+        );
+        guardianstate.click();
+        guardianstate.get('[data-value="Florida"]');
+        guardianstate.click();
+        
+        
         const guardianemail = cy.xpath("//input[@id='32']");
         guardianemail.type(`${data.email}{enter}`);
         const contactemer = cy.xpath("//input[@id='36']");
@@ -95,7 +93,7 @@ class activist {
           "//div[@class='styles__Wrapper-nrkjin-0 ksCtKU']//div[@id='mui-component-select-0']"
         );
         highschool.click();
-        highschool.get('[data-value="Atherton High School"]');
+        highschool.get('[data-value="Ballard High School"]');
         highschool.click();
         const grade = cy.xpath(
           "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12']//div[@class='styles__Wrapper-nrkjin-0 iheldx']//div[@id='mui-component-select-0']"
@@ -107,15 +105,14 @@ class activist {
           "//span[contains(text(),'Latin or Hispanic American')]"
         );
         self_identify.click();
-        const minority = cy.xpath(
-          "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/section[4]/div[2]/div[1]/div[1]/div[7]/fieldset[1]/div[1]/label[2]"
-        );
+        const minority = cy.get(':nth-child(7) > .MuiFormControl-root > .MuiFormGroup-root > :nth-child(1) > .MuiButtonBase-root > .MuiIconButton-label > .jss615')
+        
         minority.click();
         const attend = cy.xpath(
-          "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/section[4]/div[2]/div[1]/div[1]/div[9]/fieldset[1]/div[1]/label[2]/span[2]"
+          "cy.get(':nth-child(9) > .MuiFormControl-root > .MuiFormGroup-root > :nth-child(1) > .MuiButtonBase-root > .MuiIconButton-label > .jss615')"
         );
         attend.click();
-        const media = cy.xpath("//div[@name='76']//label[1]");
+        const media = cy.xpath("cy.get(':nth-child(11) > .MuiFormControl-root > .MuiFormGroup-root > :nth-child(1) > .MuiButtonBase-root > .MuiIconButton-label > .jss615')");
         media.click();
         const Program = cy.xpath(
           "//section[@id='EJ Information']//fieldset[@class='MuiFormControl-root styles__StyledFormControl-y6pzgx-0 eZDNad']//label[2]"
